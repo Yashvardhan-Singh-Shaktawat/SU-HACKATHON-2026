@@ -122,6 +122,9 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => { clearInterval(sensorInterval); });
 });
 
-server.listen(process.env.PORT || 5001, () => console.log(`🚀 WeaveMind v4 on port ${process.env.PORT || 5001}`));
+const isVercel = process.env.VERCEL === '1';
+if (!isVercel) {
+  server.listen(process.env.PORT || 5001, () => console.log(`🚀 WeaveMind v4 on port ${process.env.PORT || 5001}`));
+}
 
 module.exports = app;
