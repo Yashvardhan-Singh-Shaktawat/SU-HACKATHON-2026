@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "http://localhost:5001/api/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/build/$1"
-    }
-  ],
   "builds": [
     {
       "src": "backend/server.js",
@@ -18,7 +8,19 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "backend/server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "frontend/$1"
     }
   ]
 }

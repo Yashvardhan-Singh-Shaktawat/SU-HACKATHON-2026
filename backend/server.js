@@ -123,3 +123,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(process.env.PORT || 5001, () => console.log(`🚀 WeaveMind v4 on port ${process.env.PORT || 5001}`));
+
+module.exports = app;
