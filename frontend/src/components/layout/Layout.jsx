@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../hooks/useAuth';
 import { useSocketEvent } from '../../hooks/useSocket';
 import { useTheme } from '../../hooks/useTheme';
+import PermissionGateway from '../PermissionGateway';
 
 const NAV = [
   { to: '/',           label: 'Dashboard',   icon: '⬡',  exact: true },
@@ -213,6 +214,9 @@ export default function Layout() {
         <div style={{ padding: '24px 28px', flex: 1 }}>
           <Outlet />
         </div>
+        
+        {/* Unified Permission Gateway */}
+        <PermissionGateway />
       </main>
 
       {/* ── Alert Toasts ── */}
