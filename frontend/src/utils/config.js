@@ -6,7 +6,7 @@
  * 2. Replace 'localhost' with that IP address below.
  */
 
-const SERVER_IP = 'localhost'; // Change this to your local IP for mobile testing
+const SERVER_IP = '192.168.43.201'; // Your actual local IP address
 
 export const API_BASE_URL = `http://${SERVER_IP}:5001/api`;
 export const ML_SERVICE_URL = `http://${SERVER_IP}:8000`;
