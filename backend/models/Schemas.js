@@ -181,6 +181,14 @@ const SalesPredictionSchema = new mongoose.Schema({
   suggestedProduction: { type: Number, default: 0 }
 }, { timestamps: true });
 
+// ==================== LOCATION ====================
+const LocationSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  latitude: { type: Number, required: true },
+  longitude: { type: Number, required: true },
+  timestamp: { type: Date, default: Date.now }
+}, { timestamps: true });
+
 module.exports = {
   User: mongoose.model('User', UserSchema),
   Machine: mongoose.model('Machine', MachineSchema),
@@ -191,5 +199,6 @@ module.exports = {
   Supplier: mongoose.model('Supplier', SupplierSchema),
   Ledger: mongoose.model('Ledger', LedgerSchema),
   SensorLog: mongoose.model('SensorLog', SensorLogSchema),
-  SalesPrediction: mongoose.model('SalesPrediction', SalesPredictionSchema)
+  SalesPrediction: mongoose.model('SalesPrediction', SalesPredictionSchema),
+  Location: mongoose.model('Location', LocationSchema)
 };

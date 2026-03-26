@@ -29,6 +29,7 @@ app.use('/api/energy',      require('./routes/energyRoutes'));
 app.use('/api/payments',    require('./routes/paymentRoutes'));
 app.use('/api/reports',     require('./routes/reportRoutes'));
 app.use('/api/sales',       require('./routes/salesRoutes'));
+app.use('/api/location',    require('./routes/locationRoutes'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'OK', time: new Date() }));
 

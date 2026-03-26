@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import API from '../utils/api';
 import { useSocketEvent } from '../hooks/useSocket';
+import LocationTracker from '../components/LocationTracker';
 
 const COLORS = ['#00d4ff', '#00e676', '#f59e0b', '#f43f5e', '#a855f7'];
 
@@ -77,6 +78,8 @@ export default function Dashboard() {
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 700, letterSpacing: '0.04em' }}>Factory Control Center</h1>
         <p style={{ color: 'var(--text-2)', fontSize: 13, marginTop: 4 }}>Real-time overview of all factory operations</p>
       </div>
+
+      <LocationTracker />
 
       {/* Stat Cards */}
       <div className="grid-4" style={{ marginBottom: 24 }}>
